@@ -2,7 +2,9 @@
 
 These fixed ANSI/Unicode assets were generated with Chafa (chafa-wasm 0.3.3)
 from the supplied Manara lighthouse silhouette. Font width/height is 1/2;
-the output uses single-cell block symbols, truecolor and no dithering.
+the output uses single-cell block symbols, foreground-only truecolor and no
+dithering. No background colors are painted; empty areas use the terminal's
+own background, including its transparency.
 
 Prepared sizes: 44x13, 36x11 and 28x9 character cells. The launcher chooses a
 size that fits with a spare terminal column. It never rescales these glyphs.
