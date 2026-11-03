@@ -1,0 +1,32 @@
+name: Package Manara CLI
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'release/**'
+      - '.github/workflows/package-cli.yml'
+permissions:
+  contents: write
+concurrency:
+  group: manara-cli-package
+  cancel-in-progress: false
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Build, install and verify the downloadable package
+        run: node release/build.mjs
+      - name: Publish the verified archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md downloads/
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish verified Manara CLI 1.9.6 with colored terminal artwork"
+            git push origin HEAD:main
+          fi
