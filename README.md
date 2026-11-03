@@ -5,15 +5,15 @@ Requires **Node.js 22 or later**. No GitHub account, API key, Docker or cloud ba
 
 ## Download and install
 
-[Download Manara CLI 1.9.2](https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/manara-cli-1.9.2.tgz) — public download, no GitHub account required.
+[Download Manara CLI 1.9.3](https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/manara-cli-1.9.3.tgz) — public download, no GitHub account required.
 
 [SHA-256 checksums](https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/SHA256SUMS)
 
 ```bash
-curl -fL https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/manara-cli-1.9.2.tgz -o manara-cli-1.9.2.tgz
+curl -fL https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/manara-cli-1.9.3.tgz -o manara-cli-1.9.3.tgz
 curl -fL https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/SHA256SUMS -o SHA256SUMS
 sha256sum -c SHA256SUMS
-npm install --global --offline --no-audit --no-fund ./manara-cli-1.9.2.tgz
+npm install --global --offline --no-audit --no-fund ./manara-cli-1.9.3.tgz
 manara --help
 manara scan /path/to/project
 ```
@@ -22,7 +22,7 @@ If global npm installation is unavailable, extract and run the bundled tool dire
 
 ```bash
 mkdir manara-cli
-tar -xzf manara-cli-1.9.2.tgz -C manara-cli --strip-components=1
+tar -xzf manara-cli-1.9.3.tgz -C manara-cli --strip-components=1
 node manara-cli/cli/manara.mjs scan /path/to/project
 ```
 
@@ -30,7 +30,7 @@ The archive includes all parser assets. Installation from the downloaded archive
 
 ## Terminal banner
 
-An ASCII lighthouse with an eye appears when you run `manara`, `manara --help`, or a text scan. JSON, SARIF and HTML outputs remain free of the banner.
+The supplied Manara lighthouse artwork appears when you run `manara`, `manara --help`, or a text scan. It automatically scales to the terminal width (80 columns for redirected output). The original artwork is bundled in `cli/banner.txt`; sufficiently wide terminals show it at full size. JSON, SARIF and HTML outputs remain free of the banner.
 
 ## Reports
 
