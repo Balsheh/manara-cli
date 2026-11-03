@@ -5,15 +5,15 @@ Requires **Node.js 22 or later**. No GitHub account, API key, Docker or cloud ba
 
 ## Download and install
 
-[Download Manara CLI 1.9.7](https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/manara-cli-1.9.7.tgz) — public download, no GitHub account required.
+[Download Manara CLI 1.9.8](https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/manara-cli-1.9.8.tgz) — public download, no GitHub account required.
 
 [SHA-256 checksums](https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/SHA256SUMS)
 
 ```bash
-curl -fL https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/manara-cli-1.9.7.tgz -o manara-cli-1.9.7.tgz
+curl -fL https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/manara-cli-1.9.8.tgz -o manara-cli-1.9.8.tgz
 curl -fL https://raw.githubusercontent.com/Balsheh/manara-cli/main/downloads/SHA256SUMS -o SHA256SUMS
 sha256sum --ignore-missing -c SHA256SUMS
-npm install --global --offline --no-audit --no-fund ./manara-cli-1.9.7.tgz
+npm install --global --offline --no-audit --no-fund ./manara-cli-1.9.8.tgz
 manara --help
 manara scan /path/to/project
 ```
@@ -22,7 +22,7 @@ If global npm installation is unavailable, extract and run the bundled tool dire
 
 ```bash
 mkdir manara-cli
-tar -xzf manara-cli-1.9.7.tgz -C manara-cli --strip-components=1
+tar -xzf manara-cli-1.9.8.tgz -C manara-cli --strip-components=1
 node manara-cli/cli/manara.mjs scan /path/to/project
 ```
 
@@ -34,7 +34,7 @@ The colored lighthouse is pre-rendered with Chafa at 44x13, 36x11 and 28x9 cells
 
 ![Terminal banner preview](https://raw.githubusercontent.com/Balsheh/manara-cli/main/docs/banner-preview.png)
 
-The image uses single-cell Unicode blocks and ANSI colors in an interactive terminal. No image converter is installed or run on your computer. Non-interactive output, NO_COLOR and TERM=dumb use a readable ASCII fallback. Set MANARA_ASCII=1 to request the plain fallback explicitly. Exported JSON, SARIF, HTML and saved reports contain no color codes.
+The image uses single-cell Unicode blocks and foreground colors only in an interactive terminal. Empty areas show the terminal's own background or transparency, with no black rectangle. No image converter is installed or run on your computer. Non-interactive output, NO_COLOR and TERM=dumb use a readable ASCII fallback. Set MANARA_ASCII=1 to request the plain fallback explicitly. Exported JSON, SARIF, HTML and saved reports contain no color codes.
 
 ## Reports
 
